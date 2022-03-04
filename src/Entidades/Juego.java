@@ -1,6 +1,7 @@
 package Entidades;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -39,5 +40,18 @@ public class Juego {
         return "Juego{" + "jugadores=" + jugadores + ", revolver=" + revolver + '}';
     }
     
+    public void llenarJuego(RevolverDeAgua r, HashMap <Integer,String>jugadores, Jugador j) {
+        for (int i = 0; i < j.preguntarCantidad(); i++) {
+            jugadores.put(i, "JUGADOR");
+        }
+        
+        r.llenarRevolver();
+    }
     
+    public void ronda() {
+        do {
+            
+        } while ();
+        
+    }
 }

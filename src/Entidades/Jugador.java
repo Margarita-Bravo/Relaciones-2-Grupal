@@ -58,9 +58,17 @@ public class Jugador {
             cantidad=6;
         }
         
-        return cantidad;
+        return cantidad; 
         
     }
     
-   
+    public boolean disparo(RevolverDeAgua r) {
+        mojado=false;
+        if (r.mojar()==true) {
+            mojado=true; }
+        r.siguienteChorro();
+        return mojado;
+    }
+  
+    
 }
