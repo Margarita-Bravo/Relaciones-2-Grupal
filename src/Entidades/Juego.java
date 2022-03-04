@@ -1,57 +1,33 @@
 package Entidades;
 
-import java.util.HashMap;
-import java.util.Map;
+import Entidades.ServiClub.Servite;
+import java.util.ArrayList;
 
 /**
  *
  * @author Margarita_Bravo
  */
 public class Juego {
-    private HashMap <Integer,String>jugadores;
+    private ArrayList <Jugador>jugadores= new ArrayList();
     private RevolverDeAgua revolver;
 
     public Juego() {
     }
-
-    public Juego(HashMap<Integer, String> jugadores, RevolverDeAgua revolver) {
-        this.jugadores = jugadores;
-        this.revolver = revolver;
-    }
-
-    public HashMap<Integer, String> getJugadores() {
-        return jugadores;
-    }
-
-    public void setJugadores(HashMap<Integer, String> jugadores) {
-        this.jugadores = jugadores;
-    }
-
-    public RevolverDeAgua getRevolver() {
-        return revolver;
-    }
-
-    public void setRevolver(RevolverDeAgua revolver) {
-        this.revolver = revolver;
-    }
-
-    @Override
-    public String toString() {
-        return "Juego{" + "jugadores=" + jugadores + ", revolver=" + revolver + '}';
-    }
-    
-    public void llenarJuego(RevolverDeAgua r, HashMap <Integer,String>jugadores, Jugador j) {
+    public void llenarJuego(RevolverDeAgua r, ArrayList <Jugador>jugadores, Jugador j) {
+        Servite servi= new Servite();
         for (int i = 0; i < j.preguntarCantidad(); i++) {
-            jugadores.put(i, "JUGADOR");
+            jugadores.add(servi.crearJugador(i));
         }
         
         r.llenarRevolver();
     }
     
-    public void ronda() {
+    /*public void ronda() {
         do {
             
         } while ();
         
+    }/*
     }
+    */
 }

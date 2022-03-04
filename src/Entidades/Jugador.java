@@ -15,10 +15,9 @@ public class Jugador {
     public Jugador() {
     }
 
-    public Jugador(int idJugador, String nombreJugador, boolean mojado) {
+    public Jugador(int idJugador, String nombreJugador) {
         this.idJugador = idJugador;
         this.nombreJugador = nombreJugador;
-        this.mojado = mojado;
     }
 
     public int getIdJugador() {
