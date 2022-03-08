@@ -1,8 +1,13 @@
 package Entidades;
 
+
 import java.util.ArrayList;
-import java.util.Map;
+
 import java.util.Scanner;
+
+import Entidades.ServiClub.Servite;
+
+
 
 /**
  *
@@ -10,13 +15,18 @@ import java.util.Scanner;
  */
 public class Juego {
 
+
     Scanner leer = new Scanner(System.in);
 
     private ArrayList<Jugador> jugadores=new ArrayList();
+
+    private ArrayList <Jugador>jugadores= new ArrayList();
+
     private RevolverDeAgua revolver;
 
     public Juego() {
     }
+
 
     public Juego(ArrayList<Jugador> jugadores, RevolverDeAgua revolver) {
         this.jugadores =  jugadores;
@@ -59,10 +69,11 @@ public class Juego {
         r.llenarRevolver();
     }
 
+
     public void ronda(Jugador j) {
         for (Jugador aux : jugadores) {
             aux.disparo(revolver);
         }
-    }
+
 }
 
