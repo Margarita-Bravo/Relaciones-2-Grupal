@@ -1,4 +1,3 @@
-
 package Entidades;
 
 import java.util.Scanner;
@@ -8,6 +7,7 @@ import java.util.Scanner;
  * @author Margarita_Bravo
  */
 public class Jugador {
+
     private int idJugador;
     private String nombreJugador;
     private boolean mojado;
@@ -48,26 +48,27 @@ public class Jugador {
     public String toString() {
         return "Jugador{" + "idJugador=" + idJugador + ", nombreJugador=" + nombreJugador + ", mojado=" + mojado + '}';
     }
-    
-    Scanner leer = new Scanner (System.in);
-    public int preguntarCantidad(){
+
+    Scanner leer = new Scanner(System.in);
+
+    public int preguntarCantidad() {
         System.out.println("Ingrese la cantidad de jugadores");
-        int cantidad=leer.nextInt();
-        if (cantidad<1||cantidad>6) {
-            cantidad=6;
+        int cantidad = leer.nextInt();
+        if (cantidad < 1 || cantidad > 6) {
+            cantidad = 6;
         }
-        
-        return cantidad; 
-        
+        return cantidad;
     }
-    
+
     public boolean disparo(RevolverDeAgua r) {
-        mojado=false;
-        if (r.mojar()==true) {
-            mojado=true; }
-        r.siguienteChorro();
+        mojado = false;
+        if (r.mojar() == true) {
+            mojado = true;
+            System.out.println("FIN DEL JUEGO");
+        } else {
+            r.siguienteChorro();
+        }
         return mojado;
     }
-  
-    
+
 }
