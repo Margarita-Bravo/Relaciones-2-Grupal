@@ -39,8 +39,8 @@ public class RevolverDeAgua {
     
     public void llenarRevolver(){
         
-        posicionActual=  (int) (Math.random() * 10);
-        posicionAgua= (int) (Math.random() * 10);
+        posicionActual=  (int) (Math.random() * 6);
+        posicionAgua= (int) (Math.random() * 6);
        
     }
     
@@ -55,7 +55,7 @@ public class RevolverDeAgua {
     
     public int siguienteChorro(){
         
-        if (posicionActual==10) {
+        if (posicionActual==6) {
             posicionActual=1;
         }else{
              posicionActual=posicionActual+1;

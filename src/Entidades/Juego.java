@@ -1,29 +1,33 @@
 package Entidades;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  *
  * @author Margarita_Bravo
  */
 public class Juego {
-    private HashMap <Integer,String>jugadores;
+
+    Scanner leer = new Scanner(System.in);
+
+    private ArrayList<Jugador> jugadores=new ArrayList();
     private RevolverDeAgua revolver;
 
     public Juego() {
     }
 
-    public Juego(HashMap<Integer, String> jugadores, RevolverDeAgua revolver) {
-        this.jugadores = jugadores;
+    public Juego(ArrayList<Jugador> jugadores, RevolverDeAgua revolver) {
+        this.jugadores =  jugadores;
         this.revolver = revolver;
     }
 
-    public HashMap<Integer, String> getJugadores() {
+    public ArrayList<Jugador> getJugadores() {
         return jugadores;
     }
 
-    public void setJugadores(HashMap<Integer, String> jugadores) {
+    public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
 
@@ -39,19 +43,26 @@ public class Juego {
     public String toString() {
         return "Juego{" + "jugadores=" + jugadores + ", revolver=" + revolver + '}';
     }
-    
-    public void llenarJuego(RevolverDeAgua r, HashMap <Integer,String>jugadores, Jugador j) {
-        for (int i = 0; i < j.preguntarCantidad(); i++) {
-            jugadores.put(i, "JUGADOR");
+
+    public Jugador crearjugador(int i) {
+        System.out.println("Ingrese el nombre del jugador");
+        String nombre = leer.next();
+        Jugador j;
+        return j = new Jugador(i, nombre);
+    }
+
+    public void llenarJuego(RevolverDeAgua r, ArrayList<Jugador> jugadores, Jugador j) {
+        int total=j.preguntarCantidad();
+        for (int i = 0; i < total; i++) {
+            jugadores.add(crearjugador(i));
         }
-        
         r.llenarRevolver();
     }
-    
-    public void ronda() {
-        do {
-            
-        } while ();
-        
+
+    public void ronda(Jugador j) {
+        for (Jugador aux : jugadores) {
+            aux.disparo(revolver);
+        }
     }
 }
+
